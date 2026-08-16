@@ -1,42 +1,30 @@
-# Scoop Bucket Template
+# Harness Desktop Scoop bucket
 
-<!-- Uncomment the following line after replacing placeholders -->
-<!-- [![Tests](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/ci.yml) [![Excavator](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml/badge.svg)](https://github.com/<username>/<bucketname>/actions/workflows/excavator.yml) -->
+[![Tests](https://github.com/baiyuscc13724-max/scoop-harness-desktop/actions/workflows/ci.yml/badge.svg)](https://github.com/baiyuscc13724-max/scoop-harness-desktop/actions/workflows/ci.yml)
+[![Excavator](https://github.com/baiyuscc13724-max/scoop-harness-desktop/actions/workflows/excavator.yml/badge.svg)](https://github.com/baiyuscc13724-max/scoop-harness-desktop/actions/workflows/excavator.yml)
 
-Template bucket for [Scoop](https://scoop.sh), the Windows command-line installer.
+Harness Desktop 的 Scoop 软件源。它安装项目发布页中的 Windows x64 便携版，并通过公开的 `SHA256SUMS.txt` 校验下载文件。
 
-## How do I use this template?
+## 安装
 
-1. Generate your own copy of this repository with the "Use this template"
-   button.
-2. Allow all GitHub Actions:
-   - Navigate to `Settings` - `Actions` - `General` - `Actions permissions`.
-   - Select `Allow all actions and reusable workflows`.
-   - Then `Save`.
-3. Allow writing to the repository from within GitHub Actions:
-   - Navigate to `Settings` - `Actions` - `General` - `Workflow permissions`.
-   - Select `Read and write permissions`.
-   - Then `Save`.
-4. Document the bucket in `README.md`.
-5. Replace the placeholder repository string in `bin/auto-pr.ps1`.
-6. Create new manifests by copying `bucket/app-name.json.template` to
-   `bucket/<app-name>.json`.
-7. Commit and push changes.
-8. If you'd like your bucket to be indexed on `https://scoop.sh`, add the
-   topic `scoop-bucket` to your repository.
+```powershell
+scoop bucket add harness-desktop https://github.com/baiyuscc13724-max/scoop-harness-desktop
+scoop install harness-desktop/harness-desktop
+```
+升级和卸载：
 
-## How do I install these manifests?
-
-After manifests have been committed and pushed, run the following:
-
-```pwsh
-scoop bucket add <bucketname> https://github.com/<username>/<bucketname>
-scoop install <bucketname>/<manifestname>
+```powershell
+scoop update harness-desktop
+scoop uninstall harness-desktop
 ```
 
-## How do I contribute new manifests?
+项目主页与图形安装包：<https://github.com/baiyuscc13724-max/deepseek-harness-desktop>
 
-To make a new manifest contribution, please read the [Contributing
-Guide](https://github.com/ScoopInstaller/.github/blob/main/.github/CONTRIBUTING.md)
-and [App Manifests](https://github.com/ScoopInstaller/Scoop/wiki/App-Manifests)
-wiki page.
+## English
+
+This bucket installs the Windows x64 portable release of Harness Desktop and verifies it against the SHA-256 checksum published with the same GitHub Release.
+
+```powershell
+scoop bucket add harness-desktop https://github.com/baiyuscc13724-max/scoop-harness-desktop
+scoop install harness-desktop/harness-desktop
+```
